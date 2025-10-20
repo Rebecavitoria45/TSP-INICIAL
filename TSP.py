@@ -34,7 +34,8 @@ def Distancia_total(rota):
 def eh_valida_rota(rota):
     if len(rota) == 13:
         rota_sem_extremos = rota[1:-1]  # removendo a cidade 0 do início e fim
-
+        if 0 in rota_sem_extremos:
+         return False
         for i in range(len(rota_sem_extremos)):
             for j in range(i + 1, len(rota_sem_extremos)):
                 if rota_sem_extremos[i] == rota_sem_extremos[j]:
